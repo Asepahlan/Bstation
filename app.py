@@ -7,7 +7,7 @@ app = Flask(__name__)
 def index():
     if request.method == 'POST':
         url = request.form['url']
-        duration = int(request.form['duration'])
+        duration = int(request.form['duration']) * 60  # Convert minutes to seconds
         repeat = int(request.form['repeat'])
         
         # Memutar video menggunakan Selenium
