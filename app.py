@@ -7,7 +7,7 @@ app = Flask(__name__)
 def index():
     if request.method == 'POST':
         url = request.form['url']
-        duration = int(request.form['duration']) * 60  # Convert minutes to seconds
+        duration = int(request.form['duration']) * 60  # Mengonversi menit ke detik
         repeat = int(request.form['repeat'])
         
         # Memutar video menggunakan Selenium
@@ -15,5 +15,5 @@ def index():
     
     return render_template('index.html')
 
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000, debug=True)
